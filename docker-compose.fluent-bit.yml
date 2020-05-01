@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  fluent-bit:
+    build:
+      context: .
+      dockerfile: fluent-bit/Dockerfile
+    ports:
+      - 24224:24224
