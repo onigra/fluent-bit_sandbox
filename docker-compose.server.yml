@@ -2,8 +2,9 @@ version: "3.7"
 
 services:
   server:
-    build:
-      context: .
-      dockerfile: server/Dockerfile
+    image: debian:buster-slim
     logging:
       driver: fluentd
+    volumes:
+      - ./echo.sh:/echo.sh:ro
+    command: /echo.sh
